@@ -71,8 +71,8 @@ function Inicio({ irATienda, irAContacto, imagenFondo }) {
 function Tienda({ carrito, setCarrito, volverInicio }) {
   const productos = [
     { nombre: "Criollo", precio: 700, img: "/criollo.jpg" },
-    { nombre: "Mafalda", precio: 900, img: "mafalda.jpg" },
-    { nombre: "Factura", precio: 500, img: "factura.jpg" },
+    { nombre: "Mafalda", precio: 1300, img: "mafalda.jpg" },
+    { nombre: "Factura", precio: 1000, img: "factura.jpg" },
     { nombre: "Chipa", precio: 600, img: "chipa.jpg" },
   ];
 
@@ -302,7 +302,7 @@ function Contacto({ volverInicio }) {
       
       <div style={{ color: "#5C3A21", lineHeight: "1.8", fontSize: "1.2rem" }}>
         <p><strong>Dirección:</strong> Villa Carlos Paz</p>
-        <p><strong>Teléfono:</strong> +54 351 1234567</p>
+        <p><strong>Teléfono:</strong> +54 3541653229</p>
         <p><strong>Email:</strong> dulcehogar@gmail.com</p>
       </div>
 
