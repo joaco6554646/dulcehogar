@@ -312,6 +312,7 @@ function Contacto({ volverInicio }) {
     <div style={{
       fontFamily: "Arial, sans-serif",
       height: "100vh",
+      width:"210vh",
       background: "#F5F1EB",
       display: "flex",
       flexDirection: "column",
