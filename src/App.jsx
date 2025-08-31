@@ -79,6 +79,7 @@ function Tienda({ carrito, setCarrito, volverInicio }) {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [metodoPago, setMetodoPago] = useState("efectivo");
   const [alias] = useState("joa.marengo88");
+  const numeroWhats = "+543541653229";
 
   const agregarAlCarrito = (producto) => setCarrito([...carrito, producto]);
   const eliminarDelCarrito = (index) => {
@@ -88,6 +89,10 @@ function Tienda({ carrito, setCarrito, volverInicio }) {
   };
 
   const total = carrito.reduce((acc, p) => acc + p.precio, 0);
+
+  const mensajeWhatsApp = `Hola, quiero enviar mi comprobante de transferencia:\n` +
+    carrito.map(p => `${p.nombre} - $${p.precio}`).join("\n") +
+    `\nTotal: $${total}\nNúmero: ${numeroWhats}`;
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: 0 }}>
@@ -224,6 +229,25 @@ function Tienda({ carrito, setCarrito, volverInicio }) {
             {metodoPago === "transferencia" && (
               <div style={{ marginTop: "1rem", textAlign: "center" }}>
                 <p>Alias para transferencia: <strong>{alias}</strong></p>
+                <a
+                  href={`https://wa.me/543541653229?text=${encodeURIComponent(mensajeWhatsApp)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    marginTop: "1rem",
+                    display: "inline-block",
+                    padding: "0.7rem 1.5rem",
+                    borderRadius: "5px",
+                    border: "none",
+                    background: "#25D366",
+                    color: "#fff",
+                    cursor: "pointer",
+                    fontWeight: "bold",
+                    textDecoration: "none"
+                  }}
+                >
+                  Enviar comprobante por WhatsApp
+                </a>
               </div>
             )}
           </div>
@@ -287,25 +311,22 @@ function Contacto({ volverInicio }) {
   return (
     <div style={{
       fontFamily: "Arial, sans-serif",
-      height: "100vh",      // ocupa toda la pantalla
-      width: "500%",
+      height: "100vh",
       background: "#F5F1EB",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center", // centra verticalmente
-      alignItems: "center",     // centra horizontalmente
+      justifyContent: "center",
+      alignItems: "center",
       padding: "2rem",
       boxSizing: "border-box",
       textAlign: "center"
     }}>
       <h1 style={{ color: "#5C3A21", marginBottom: "2rem" }}>Contacto</h1>
-      
       <div style={{ color: "#5C3A21", lineHeight: "1.8", fontSize: "1.2rem" }}>
         <p><strong>Dirección:</strong> Villa Carlos Paz</p>
         <p><strong>Teléfono:</strong> +54 3541653229</p>
         <p><strong>Email:</strong> dulcehogar@gmail.com</p>
       </div>
-
       <div style={{ marginTop: "3rem" }}>
         <button 
           onClick={volverInicio} 
